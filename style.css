@@ -1,0 +1,82 @@
+body {
+    font-family: 'Sansita Swashed', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+    height: 100vh;
+    background-color: rgba(100, 148, 237, 0.568);
+    box-sizing: border-box;
+    align-items: center;
+    color: rgba(59, 80, 80, 0.808);
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em 1em;
+    justify-items: center;
+}
+
+#bottom {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.container {
+    background-color: lightblue;
+    border: 1px solid rgb(25, 25, 25);
+    transition: transform .2s ease-in;
+    z-index: 100;
+}
+
+.card-hidden {
+    width: 65px;
+    padding: 15px;
+    transition: all .2s ease-in;
+    opacity: 0;
+}
+
+.clicked {
+    transform: rotateY(180deg);
+    opacity: 1;
+}
+
+.container:hover {
+    border: 1px solid rgb(6, 88, 102);
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.failure {
+    background-color: rgb(238, 155, 144);
+}
+
+#modal {
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(120, 164, 199);
+    height: 90%;
+    z-index: 10000;
+    opacity: .98;
+    border-top: 5px solid lightslategrey;
+    border-bottom: 5px solid lightslategrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    color: lightgreen;
+    font-size: xx-large;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: lightsalmon;
+}
