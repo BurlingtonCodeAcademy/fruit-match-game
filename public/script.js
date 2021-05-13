@@ -17,9 +17,9 @@ const pictureArray = [
   "./assets/008-pineapple.svg",
 ];
 
-let cards = document.querySelectorAll(".card");
-let playAgain = document.querySelector("button");
-let modal = document.querySelector("#modal");
+//target all elements with the class "cards"
+//target the replay button
+//target the modal dialog box
 let clickedCards = [];
 let winArray = [];
 
