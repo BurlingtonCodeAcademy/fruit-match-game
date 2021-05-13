@@ -1,0 +1,38 @@
+{
+  "name": "fruit_match_game",
+  "version": "1.0.0",
+  "description": "A simple browser memory game to show how to build interactive pages",
+  "private": true,
+  "main": "script.js",
+  "scripts": {
+    "start": "serve ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurlingtonCodeAcademy/fruit-match-game.git"
+  },
+  "keywords": [
+    "game",
+    "workshop",
+    "education"
+  ],
+  "contributors": [
+    {
+      "name": "Burlington Code Academy, Inc.",
+      "email": "info@burlingtoncodeacademy.com",
+      "url": "https://burlingtoncodeacademy.com"
+    },
+    {
+      "name": "Paul Phelps",
+      "email": "info@burlingtoncodeacademy.com",
+      "url": "https://burlingtoncodeacademy.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/BurlingtonCodeAcademy/fruit-match-game/issues"
+  },
+  "homepage": "https://github.com/BurlingtonCodeAcademy/fruit-match-game#readme",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}
