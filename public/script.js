@@ -27,77 +27,58 @@ playAgain.addEventListener("click", hideModal);
 startGame(pictureArray);
 
 function startGame(pictures) {
-  let shuffled = shuffleArray(pictures);
-  cards.forEach((card) => {
-    card.addEventListener("click", selectCard);
-    card.src = shuffled.shift();
-  });
+  // start the game
+  // shuffle the cards
+  // setup click event listener
 }
 
 function shuffleArray(oldCards) {
-  let newCards = Array.from(oldCards);
-  for (var i = newCards.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = newCards[i];
-    newCards[i] = newCards[j];
-    newCards[j] = temp;
-  }
-  return newCards;
+  // accept a deck of cards
+  // copy the deck of cards
+  // shuffle the new deck
+  // return the shuffled cards
 }
 
 function selectCard(event) {
-  event.target.classList += " clicked";
-  clickedCards.push(event.target);
-  if (
-    clickedCards.length === 2 &&
-    clickedCards[0].src === clickedCards[1].src
-  ) {
-    clickedCards.forEach((card) => {
-      card.removeEventListener("click", selectCard);
-      card.parentNode.classList += " success";
-    });
-    setTimeout(checkWin, 200);
-  } else if (clickedCards.length === 2) {
-    clickedCards.forEach((card) => {
-      card.parentNode.classList += " failure";
-    });
-    setTimeout(hideCards, 1500);
-  }
+  // accept a click event
+  // append the 'clicked' class to the target
+  // push the target to the 'clickedCards' winArray
+  // when the 'clickedCards' length is 2 compare the cards
+  // if the cards are same
+  //   append the 'success' class to the cards
+  //   otherwise apply the 'failure' class to the cards
+  // hide the cards after 1.5 seconds by calling 'hideCards'
 }
 
 function hideCards() {
-  clickedCards.forEach((card) => {
-    card.classList = "card card-hidden";
-    card.parentNode.classList = " container";
-    clickedCards = [];
-  });
+  // for all the clicked cards
+  // make their classes be 'card' and 'card-hidden'
+  // make their parent node class be 'container'
+  // set the clickedCards array to empty
 }
 
 function checkWin() {
-  winArray.push("match");
-  if (winArray.length === 8) {
-    showModal();
-  }
-  clickedCards = [];
+  // add 'match' to the winArray
+  // check if the length of the winArray is 8
+  // if the length is 8 then call showModal
+  // set the clickedCards array to be empty
 }
 
 function clearBoard() {
-  clickedCards = [];
-  winArray = [];
-  cards.forEach((card) => {
-    card.classList = "card card-hidden";
-    card.parentNode.classList = " container";
-    clickedCards = [];
-  });
-  startGame(pictureArray);
+  // set the clickedCards array to be empty
+  // set the winArray to be empty
+  // for every card
+  //   make the cards class list be 'card' and 'card-hidden'
+  //   make the card parent node class list be 'container
+  // set the clickedCards array to be emtpy
+  // call the startGame function with the array of pictures
 }
 
-// Modal visibility toggle
 function hideModal(event) {
-  modal.style.visibility = "hidden";
-  clearBoard();
+  // set the modal visibility to 'hidden'
+  // call the clearBoard function
 }
 
 function showModal(event) {
-  modal.style.visibility = "visible";
+  // set the modal visibility to 'visible'
 }
